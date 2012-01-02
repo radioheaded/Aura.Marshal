@@ -1,5 +1,5 @@
 ---
-title: Aura for PHP; TemplateView and TwoStepView Implementation
+title: Aura for PHP -- data-object marshalling tool
 layout: cloud
 ---
 
