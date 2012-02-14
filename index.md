@@ -1,6 +1,6 @@
 ---
 title: Aura for PHP -- Marshals data result sets into domain model objects
-layout: cloud
+layout: default
 ---
 
 Aura.Marshal
