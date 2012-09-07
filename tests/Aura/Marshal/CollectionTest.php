@@ -27,18 +27,18 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $this->type->setIdentityField('id');
         $this->type->setRecordBuilder(new RecordBuilder);
         
-        $ids = [1, 2, 3, 5, 7, 11, 13];
-        $names = ['foo', 'bar', 'baz', 'dib', 'zim', 'gir', 'irk'];
-        $data = [];
+        $ids = array(1, 2, 3, 5, 7, 11, 13);
+        $names = array('foo', 'bar', 'baz', 'dib', 'zim', 'gir', 'irk');
+        $data = array();
         foreach ($names as $key => $name) {
-            $data[] = (object) [
+            $data[] = (object) array(
                 'id' => $ids[$key],
                 'name' => $name
-            ];
+            );
         }
         
         $this->collection = new GenericCollection($data, $this->type);
-        $this->empty_collection = new GenericCollection([], $this->type);
+        $this->empty_collection = new GenericCollection(array(), $this->type);
     }
     
     /**
@@ -52,7 +52,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testGetIdentityValues()
     {
-        $expect = [1, 2, 3, 5, 7, 11, 13];
+        $expect = array(1, 2, 3, 5, 7, 11, 13);
         $actual = $this->collection->getIdentityValues();
         $this->assertSame($expect, $actual);
     }
@@ -71,14 +71,14 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $type->setRecordBuilder(new RecordBuilder);
         $type->setCollectionBuilder(new CollectionBuilder);
         
-        $ids = [1, 2, 3, 5, 7, 11, 13];
-        $names = ['foo', 'bar', 'baz', 'dib', 'zim', 'gir', 'irk'];
-        $data = [];
+        $ids = array(1, 2, 3, 5, 7, 11, 13);
+        $names = array('foo', 'bar', 'baz', 'dib', 'zim', 'gir', 'irk');
+        $data = array();
         foreach ($names as $key => $name) {
-            $data[] = [
+            $data[] = array(
                 'id' => $ids[$key],
                 'name' => $name
-            ];
+            );
         }
         
         $type->load($data);
@@ -110,7 +110,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $actual = count($this->collection);
         $this->assertSame($expect, $actual);
         
-        $expect = [$record];
+        $expect = array($record);
         $actual = $this->type->getNewRecords();
         $this->assertSame($expect, $actual);
     }

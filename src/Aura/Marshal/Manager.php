@@ -46,7 +46,7 @@ class Manager
      * An array of type definition arrays, which are converted to type
      * objects as you request them.
      * 
-     * @var array
+     * @var GenericType[]
      * 
      */
     protected $types;
@@ -148,7 +148,7 @@ class Manager
     public function __construct(
         TypeBuilder     $type_builder,
         RelationBuilder $relation_builder,
-        array           $types = []
+        array           $types = array()
     ) {
         $this->type_builder     = $type_builder;
         $this->relation_builder = $relation_builder;

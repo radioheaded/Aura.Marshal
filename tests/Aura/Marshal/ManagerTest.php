@@ -56,14 +56,14 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
     public function testGetTypes()
     {
         $actual = $this->manager->getTypes();
-        $expect = [
+        $expect = array(
             'authors',
             'posts',
             'metas',
             'comments',
             'posts_tags',
             'tags',
-        ];
+        );
         
         $this->assertSame($expect, $actual);
     }
@@ -71,13 +71,13 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
     public function testSetType_alreadySet()
     {
         $this->setExpectedException('Aura\Marshal\Exception');
-        $this->manager->setType('authors', []);
+        $this->manager->setType('authors', array());
     }
     
     public function testSetRelation_noSuchType()
     {
         $this->setExpectedException('Aura\Marshal\Exception');
-        $this->manager->setRelation('no_such_type', 'relation_name', []);
+        $this->manager->setRelation('no_such_type', 'relation_name', array());
     }
     
     public function testSetRelation_typeNotInstantiated()
@@ -109,7 +109,7 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
         
         // ... and make sure we have a posts relation.
         $actual = $this->manager->authors->getRelationNames();
-        $expect = ['posts'];
+        $expect = array('posts');
         $this->assertSame($expect, $actual);
     }
 }

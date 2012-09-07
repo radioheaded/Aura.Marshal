@@ -95,7 +95,7 @@ class HasManyThrough extends AbstractRelation implements RelationInterface
      * 
      * @param mixed $record The native record.
      * 
-     * @return GenericCollection
+     * @return \Aura\Marshal\Collection\GenericCollection
      * 
      */
     public function getForRecord($record)

@@ -26,7 +26,7 @@ interface RelationInterface
      * @param mixed $record The record to get the related record or
      * collection for.
      * 
-     * @return GenericRecord|GenericCollection
+     * @return \Aura\Marshal\Record\GenericRecord|\Aura\Marshal\Collection\GenericCollection
      * 
      */
     public function getForRecord($record);

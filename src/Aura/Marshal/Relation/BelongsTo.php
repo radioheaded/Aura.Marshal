@@ -26,7 +26,7 @@ class BelongsTo extends AbstractRelation implements RelationInterface
      * 
      * @param mixed $record The native record.
      * 
-     * @return GenericRecord
+     * @return \Aura\Marshal\Record\GenericRecord
      * 
      */
     public function getForRecord($record)

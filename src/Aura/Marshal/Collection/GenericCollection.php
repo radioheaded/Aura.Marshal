@@ -98,7 +98,7 @@ class GenericCollection extends Data
      */
     public function getFieldValues($field)
     {
-        $values = [];
+        $values = array();
         foreach ($this->data as $offset => $record) {
             $values[$offset] = $record->$field;
         }
@@ -127,7 +127,7 @@ class GenericCollection extends Data
      * @return object
      * 
      */
-    public function appendNewRecord(array $data = [])
+    public function appendNewRecord(array $data = array())
     {
         $record = $this->type->newRecord($data);
         $this->data[] = $record;
